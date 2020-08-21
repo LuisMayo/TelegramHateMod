@@ -1,3 +1,4 @@
+![Build](https://github.com/LuisMayo/TelegramHateMod/workflows/Build/badge.svg)
 # TelegramHateMod
 ⚠ This project was never really optimized/finished. Hatesonar detects things as "I'm gay" as hate speech with more confidence than "nigger". Since this project was meant to be an automoderator for an LGTB group this problems weren't ignorable.
 I haven't archived it because I'm willing to accept PRs improving it, but I'm not using it myself so I won't put much time into it.
