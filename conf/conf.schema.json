@@ -1,0 +1,43 @@
+{
+    "data": {
+        "type": "object",
+        "id": "1",
+        "attributes": {
+            "token": {
+                "type": "string"
+            },
+            "pythonInterpreter": {
+                "type": "string",
+                "default": "python"
+            },
+            "deleteConfidenceHate": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.6
+            },
+            "kickConfidenceHate": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.9
+            },
+            "deleteConfidenceOffensive": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.8
+            },
+            "kickConfidenceOffensive": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.9
+            },
+            "debugMode": {
+                "type": "boolean",
+                "default": false
+            }
+        }
+    }
+}

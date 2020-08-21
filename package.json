@@ -1,0 +1,34 @@
+{
+  "name": "telegramhatemod",
+  "version": "1.0.0",
+  "description": "Mod to avoid hate speech on Telegram",
+  "main": "build/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisMayo/TelegramHateMod.git"
+  },
+  "keywords": [
+    "telegram",
+    "hate",
+    "speech",
+    "automod"
+  ],
+  "author": "LuisMayo",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/LuisMayo/TelegramHateMod/issues"
+  },
+  "homepage": "https://github.com/LuisMayo/TelegramHateMod#readme",
+  "dependencies": {
+    "@luismayo/schinquirer": "^0.4.1",
+    "python-bridge": "^1.1.0",
+    "telegraf": "^3.38.0",
+    "typescript": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.6.0"
+  }
+}
