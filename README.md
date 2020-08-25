@@ -1,12 +1,10 @@
 ![Build](https://github.com/LuisMayo/TelegramHateMod/workflows/Build/badge.svg)
 # TelegramHateMod
-⚠ This project was never really optimized/finished. Hatesonar detects things as "I'm gay" as hate speech with more confidence than "nigger". Since this project was meant to be an automoderator for an LGTB group this problems weren't ignorable.
-I haven't archived it because I'm willing to accept PRs improving it, but I'm not using it myself so I won't put much time into it.
-Mod to avoid hate speech on Telegram using [hatesonar](https://github.com/Hironsan/HateSonar).
+Telegram bot to moderate hate speech and toxicity in general
 
 ### Prerequisites
  - Node.js
- - Python >=3.6 (2.7 should theorically work but I haven't managed to make it work)
+ - A server/kubernetes/whatever executing [IBM's MAX-Toxic-Comment-Classifier](https://github.com/IBM/MAX-Toxic-Comment-Classifier)
  - A bot token. You can get one chatting with BotFather
 
 ### Installing
@@ -20,16 +18,7 @@ npm install into the cloned repo
 ```
 npm i
 ```
-Install Python dependencies
-```
-pip install hatesonar
-```
-There are thousands of reasons a pip install can fail, for me it failed because I didn't have Cython, so if it fails try installing it using, then try installing hatesonar again
-```
-(optional)
-pip install Cython
-pip install hatesonar
-```
+
 
 Build the project
 `tsc`

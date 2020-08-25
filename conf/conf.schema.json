@@ -6,33 +6,82 @@
             "token": {
                 "type": "string"
             },
-            "pythonInterpreter": {
+            "toxicDeleteConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.7
+            },
+            "toxicKickConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.7
+            },
+            "severeToxicDeleteConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.7
+            },
+            "severeToxicKickConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.7
+            },
+            "obsceneDeleteConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.7
+            },
+            "obsceneKickConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.7
+            },
+            "threatDeleteConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.7
+            },
+            "threatKickConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.7
+            },
+            "insultDeleteConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.7
+            },
+            "insultKickConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.7
+            },
+            "hateDeleteConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.7
+            },
+            "hateKickConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "default": 0.7
+            },
+            "serverUrl": {
                 "type": "string",
-                "default": "python"
-            },
-            "deleteConfidenceHate": {
-                "type": "number",
-                "minimum": 0,
-                "maximum": 1,
-                "default": 0.6
-            },
-            "kickConfidenceHate": {
-                "type": "number",
-                "minimum": 0,
-                "maximum": 1,
-                "default": 0.9
-            },
-            "deleteConfidenceOffensive": {
-                "type": "number",
-                "minimum": 0,
-                "maximum": 1,
-                "default": 0.8
-            },
-            "kickConfidenceOffensive": {
-                "type": "number",
-                "minimum": 0,
-                "maximum": 1,
-                "default": 0.9
+                "required": true,
+                "description": "IBM MAX-Toxic-Comment-Classifier server"
             },
             "debugMode": {
                 "type": "boolean",
