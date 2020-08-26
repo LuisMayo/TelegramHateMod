@@ -49,14 +49,6 @@ async function checkText(text: string, ctx: Telegraf.Context) {
     }
 
     const prediction = result.results[0].predictions;
-
-    /*
-    "toxic": 0.00043087179074063897,
-        "severe_toxic": 0.00012918129505123943,
-        "obscene": 0.00015268969582393765,
-        "threat": 0.00011289756366750225,
-        "insult": 0.00013602284889202565,
-        "identity_hate": 0.00014075539365876466 */
         if (prediction.toxic >= MainService.conf.toxicKickConfidence
             || prediction.severe_toxic >= MainService.conf.severeToxicKickConfidence
             || prediction.obscene >= MainService.conf.obsceneKickConfidence
