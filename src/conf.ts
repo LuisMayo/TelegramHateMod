@@ -14,4 +14,5 @@ export interface Conf {
     hateKickConfidence: number;
     serverUrl: string;
     debugMode: boolean;
+    logId: string;
 }

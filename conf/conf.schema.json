@@ -83,6 +83,10 @@
                 "required": true,
                 "description": "IBM MAX-Toxic-Comment-Classifier server"
             },
+            "logId": {
+                "type": "string",
+                "description": "Id of the chat to log actions"
+            },
             "debugMode": {
                 "type": "boolean",
                 "default": false

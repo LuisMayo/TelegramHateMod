@@ -18,15 +18,15 @@ async function main() {
         MainService.conf = await schinquirer.prompt(schema);
         fs.writeFile('./conf/conf.json', JSON.stringify(MainService.conf), { encoding: 'utf-8' }, () => { });
     }
-    storage.init({dir: 'db/group'});
+    storage.init({ dir: 'db/group' });
     const bot = new Telegraf.default(MainService.conf.token);
     bot.start(ctx => ctx.reply('I will moderate delete hate messages and/or kick users. Please make me an admin'));
     bot.command('about', ctx => ctx.reply('Made with ❤ by @TLuigi003. Source code avaiable at https://github.com/LuisMayo/TelegramHateMod'))
     bot.command('reload', ctx => {
         bot.telegram.getChatAdministrators(ctx.chat.id).then(adminList => { // we save the admins
-            storage.set(ctx.chat.id.toString(), {id: ctx.chat.id.toString(), adminList: adminList.map(admin => admin.user)}).then(() => {
+            storage.set(ctx.chat.id.toString(), { id: ctx.chat.id.toString(), adminList: adminList.map(admin => admin.user) }).then(() => {
                 storage.get(ctx.chat.id.toString()).then((value: GroupInfo) => {
-                    ctx.reply('Admin list:\n' + value.adminList.map(usr => makeUserLink(usr)).join('\n'), {parse_mode: 'Markdown'});
+                    ctx.reply('Admin list:\n' + value.adminList.map(usr => makeUserLink(usr)).join('\n'), { parse_mode: 'Markdown' });
                 });
             })
         });
@@ -71,6 +71,12 @@ async function checkText(text: string, ctx: Telegraf.Context) {
         || prediction.insult >= MainService.conf.insultKickConfidence
         || prediction.identity_hate >= MainService.conf.hateKickConfidence) {
         console.log(new Date().toISOString() + ' kick');
+
+        if (MainService.conf.logId) {
+            ctx.telegram.sendMessage(MainService.conf.logId,
+                `❌ User ${makeUserLink(ctx.from)} has been kicked.\nMessage: ${text}|\nDetected values:\n=====\n\`${JSON.stringify(prediction, null, 2)}\``,
+                { parse_mode: 'Markdown' });
+        }
         return Actions.KICK;
     }
     if (prediction.toxic >= MainService.conf.toxicDeleteConfidence
@@ -80,6 +86,12 @@ async function checkText(text: string, ctx: Telegraf.Context) {
         || prediction.insult >= MainService.conf.insultDeleteConfidence
         || prediction.identity_hate >= MainService.conf.hateDeleteConfidence) {
         console.log(new Date().toISOString() + ' kick');
+
+        if (MainService.conf.logId) {
+            ctx.telegram.sendMessage(MainService.conf.logId,
+                `⚠ User ${makeUserLink(ctx.from)} has been warned.\nMessage: ${text}\nDetected values:\n=====\n\`${JSON.stringify(prediction, null, 2)}\``,
+                { parse_mode: 'Markdown' });
+        }
         return Actions.DELETE;
     }
     return Actions.NOTHING;
