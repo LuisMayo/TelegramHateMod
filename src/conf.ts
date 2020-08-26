@@ -1,6 +1,5 @@
 export interface Conf {
     token: string;
-    pythonInterpreter: string;
     toxicDeleteConfidence: number;
     toxicKickConfidence: number;
     severeToxicDeleteConfidence: number;
